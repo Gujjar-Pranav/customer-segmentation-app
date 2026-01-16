@@ -15,7 +15,7 @@ from fastapi.responses import StreamingResponse,JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.requests import Request
 
-from fastapi import Depends
+from fastapi import Depends,FastAPI
 from src.api.auth import require_api_key
 
 import os
@@ -127,3 +127,8 @@ def version():
         "service": "customer-segmentation-app",
         "artifacts_dir": str(ARTIFACTS_DIR),
     }
+
+
+@app.api_route("/", methods=["GET", "HEAD"])
+def root():
+    return {"status": "ok", "message": "Customer Segmentation API is running"}
