@@ -1,0 +1,17 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+openpyxl
+pyyaml
+plotly
+
+black
+ruff
+joblib
+
+fastapi
+uvicorn
+
+python-multipart
