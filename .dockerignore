@@ -5,7 +5,6 @@ __pycache__/
 *.pyd
 .git
 .gitignore
-outputs/
 data/
 *.xlsx
 *.csv
