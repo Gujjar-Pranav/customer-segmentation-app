@@ -12,10 +12,7 @@ venv/
 .idea/
 .vscode/
 
-# Outputs (runs, reports)
-outputs/runs/
-outputs/latest/
-predictions.xlsx
+
 
 # Cache
 .pytest_cache/
