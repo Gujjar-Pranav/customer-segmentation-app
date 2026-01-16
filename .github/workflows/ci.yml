@@ -30,4 +30,4 @@ jobs:
 
       - name: Run unit smoke test (optional)
         run: |
-          python -m src.main --config config/config.yaml || true
+          python -m src.main --config config/config.yaml
