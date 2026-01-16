@@ -17,10 +17,10 @@ from fastapi.requests import Request
 
 from fastapi import Depends
 from src.api.auth import require_api_key
+import os
 
 
-
-ARTIFACTS_DIR = Path("outputs/latest")
+ARTIFACTS_DIR = Path(os.getenv("ARTIFACTS_DIR", "outputs/latest"))
 
 app = FastAPI(
     title="Customer Segmentation API",
