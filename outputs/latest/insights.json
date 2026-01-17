@@ -1,9 +1,289 @@
 {
   "status": "ready",
   "generated_at": "2026-01-17",
-  "message": "Insights file created successfully",
+  "source_dir": "outputs/latest",
+  "personas": [
+    {
+      "Cluster": 0,
+      "Persona": "Budget-Conscious Families",
+      "Key_Traits": "Lower income, highest children count, low spend & frequency, store-heavy, deal-dependent",
+      "Business_Action": "Value packs, coupons, in-store promotions, discount-led messaging"
+    },
+    {
+      "Cluster": 1,
+      "Persona": "High-Value Loyal Customers",
+      "Key_Traits": "Highest income, highest spend & frequency, high product variety, low deal dependency",
+      "Business_Action": "Premium offers, loyalty rewards, exclusives, avoid heavy discounts"
+    },
+    {
+      "Cluster": 2,
+      "Persona": "Extreme / Outlier Customers",
+      "Key_Traits": "Very low income, near-zero purchases, extremely deal-dependent, tiny segment",
+      "Business_Action": "Exclude from core campaigns; handle separately if needed"
+    },
+    {
+      "Cluster": 3,
+      "Persona": "Regular Family Shoppers",
+      "Key_Traits": "Mid income, moderate children, steady purchases, balanced channels, moderate promo sensitivity",
+      "Business_Action": "Bundles, seasonal campaigns, cross-sell, family-oriented messaging"
+    }
+  ],
+  "revenue_contribution": [
+    {
+      "Cluster_Name": "High-Value Loyal Customers",
+      "Customers": 878,
+      "Total_Revenue": 1007338.25,
+      "Customer_%": 39.21,
+      "Revenue_%": 79.22
+    },
+    {
+      "Cluster_Name": "Regular Family Shoppers",
+      "Customers": 993,
+      "Total_Revenue": 214844.75,
+      "Customer_%": 44.35,
+      "Revenue_%": 16.9
+    },
+    {
+      "Cluster_Name": "Budget-Conscious Families",
+      "Customers": 365,
+      "Total_Revenue": 49162.5,
+      "Customer_%": 16.3,
+      "Revenue_%": 3.87
+    },
+    {
+      "Cluster_Name": "Extreme / Outlier Customers",
+      "Customers": 3,
+      "Total_Revenue": 195.0,
+      "Customer_%": 0.13,
+      "Revenue_%": 0.02
+    }
+  ],
+  "rfm_summary": [
+    {
+      "Recency_RFM": 47.76,
+      "Frequency_RFM": 6.24,
+      "Monetary_RFM": 134.69
+    },
+    {
+      "Recency_RFM": 52.0,
+      "Frequency_RFM": 0.33,
+      "Monetary_RFM": 65.0
+    },
+    {
+      "Recency_RFM": 49.46,
+      "Frequency_RFM": 19.43,
+      "Monetary_RFM": 1147.31
+    },
+    {
+      "Recency_RFM": 49.27,
+      "Frequency_RFM": 8.65,
+      "Monetary_RFM": 216.36
+    }
+  ],
+  "promo_roi": [
+    {
+      "Cluster_Name": "High-Value Loyal Customers",
+      "Promo_Response_Rate": 0.434,
+      "Avg_Spend": 1147.31,
+      "Avg_Deal_Dependency": 0.09
+    },
+    {
+      "Cluster_Name": "Regular Family Shoppers",
+      "Promo_Response_Rate": 0.171,
+      "Avg_Spend": 216.359,
+      "Avg_Deal_Dependency": 0.297
+    },
+    {
+      "Cluster_Name": "Budget-Conscious Families",
+      "Promo_Response_Rate": 0.159,
+      "Avg_Spend": 134.692,
+      "Avg_Deal_Dependency": 0.273
+    },
+    {
+      "Cluster_Name": "Extreme / Outlier Customers",
+      "Promo_Response_Rate": 0.0,
+      "Avg_Spend": 65.0,
+      "Avg_Deal_Dependency": 12.5
+    }
+  ],
+  "channel_strategy": [
+    {
+      "Cluster_Name": "Budget-Conscious Families",
+      "Web_Purchase_Ratio": 0.245,
+      "Store_Purchase_Ratio": 0.53
+    },
+    {
+      "Cluster_Name": "Extreme / Outlier Customers",
+      "Web_Purchase_Ratio": 0.0,
+      "Store_Purchase_Ratio": 0.0
+    },
+    {
+      "Cluster_Name": "High-Value Loyal Customers",
+      "Web_Purchase_Ratio": 0.276,
+      "Store_Purchase_Ratio": 0.414
+    },
+    {
+      "Cluster_Name": "Regular Family Shoppers",
+      "Web_Purchase_Ratio": 0.332,
+      "Store_Purchase_Ratio": 0.444
+    }
+  ],
+  "discount_risk": [
+    {
+      "Cluster_Name": "Budget-Conscious Families",
+      "Discount_Addicted": 0.025
+    },
+    {
+      "Cluster_Name": "Extreme / Outlier Customers",
+      "Discount_Addicted": 0.667
+    },
+    {
+      "Cluster_Name": "High-Value Loyal Customers",
+      "Discount_Addicted": 0.0
+    },
+    {
+      "Cluster_Name": "Regular Family Shoppers",
+      "Discount_Addicted": 0.036
+    }
+  ],
+  "clv_summary": [
+    {
+      "Cluster_Name": "High-Value Loyal Customers",
+      "CLV_Proxy": 5012515
+    },
+    {
+      "Cluster_Name": "Regular Family Shoppers",
+      "CLV_Proxy": 914458
+    },
+    {
+      "Cluster_Name": "Budget-Conscious Families",
+      "CLV_Proxy": 560292
+    },
+    {
+      "Cluster_Name": "Extreme / Outlier Customers",
+      "CLV_Proxy": 144417
+    }
+  ],
+  "cluster_summary": [
+    {
+      "Cluster": 3,
+      "Cluster_Name": "Regular Family Shoppers",
+      "Customers": 993,
+      "Avg_Income": 38750.23212487412,
+      "Avg_Total_Spend": 216.3592648539778,
+      "Avg_Frequency": 8.653575025176234,
+      "Avg_Recency": 49.26686807653575,
+      "Avg_Deal_Dependency": 0.2969853227810073,
+      "Avg_Product_Variety": 5.743202416918429,
+      "Promo_Response_Rate": 0.1711983887210473,
+      "Avg_Web_Ratio": 0.3318528132604744,
+      "Avg_Store_Ratio": 0.4440122101883026,
+      "Customer_%": 44.35
+    },
+    {
+      "Cluster": 1,
+      "Cluster_Name": "High-Value Loyal Customers",
+      "Customers": 878,
+      "Avg_Income": 71906.62699316628,
+      "Avg_Total_Spend": 1147.310079726652,
+      "Avg_Frequency": 19.42824601366743,
+      "Avg_Recency": 49.4624145785877,
+      "Avg_Deal_Dependency": 0.08973431535534437,
+      "Avg_Product_Variety": 5.751708428246014,
+      "Promo_Response_Rate": 0.4339407744874715,
+      "Avg_Web_Ratio": 0.2759496415195604,
+      "Avg_Store_Ratio": 0.4138748452085631,
+      "Customer_%": 39.21
+    },
+    {
+      "Cluster": 0,
+      "Cluster_Name": "Budget-Conscious Families",
+      "Customers": 365,
+      "Avg_Income": 39675.18356164383,
+      "Avg_Total_Spend": 134.6917808219178,
+      "Avg_Frequency": 6.235616438356164,
+      "Avg_Recency": 47.76164383561644,
+      "Avg_Deal_Dependency": 0.2728631857914058,
+      "Avg_Product_Variety": 3.797260273972603,
+      "Promo_Response_Rate": 0.1589041095890411,
+      "Avg_Web_Ratio": 0.2446569911467914,
+      "Avg_Store_Ratio": 0.5298561631690051,
+      "Customer_%": 16.3
+    },
+    {
+      "Cluster": 2,
+      "Cluster_Name": "Extreme / Outlier Customers",
+      "Customers": 3,
+      "Avg_Income": 4593.666666666667,
+      "Avg_Total_Spend": 65.0,
+      "Avg_Frequency": 0.3333333333333333,
+      "Avg_Recency": 52.0,
+      "Avg_Deal_Dependency": 12.5,
+      "Avg_Product_Variety": 5.666666666666667,
+      "Promo_Response_Rate": 0.0,
+      "Avg_Web_Ratio": 0.0,
+      "Avg_Store_Ratio": 0.0,
+      "Customer_%": 0.13
+    }
+  ],
+  "education_group_distribution": [
+    {
+      "Cluster_Name": "Budget-Conscious Families",
+      "Basic": 0.079,
+      "Graduate": 0.367,
+      "Postgraduate": 0.553
+    },
+    {
+      "Cluster_Name": "Extreme / Outlier Customers",
+      "Basic": 0.0,
+      "Graduate": 0.667,
+      "Postgraduate": 0.333
+    },
+    {
+      "Cluster_Name": "High-Value Loyal Customers",
+      "Basic": 0.079,
+      "Graduate": 0.527,
+      "Postgraduate": 0.394
+    },
+    {
+      "Cluster_Name": "Regular Family Shoppers",
+      "Basic": 0.16,
+      "Graduate": 0.531,
+      "Postgraduate": 0.309
+    }
+  ],
+  "marital_group_distribution": [
+    {
+      "Cluster_Name": "Budget-Conscious Families",
+      "Single": 0.211,
+      "Couple": 0.668,
+      "Previously Married": 0.121
+    },
+    {
+      "Cluster_Name": "Extreme / Outlier Customers",
+      "Single": 0.333,
+      "Couple": 0.333,
+      "Previously Married": 0.333
+    },
+    {
+      "Cluster_Name": "High-Value Loyal Customers",
+      "Single": 0.216,
+      "Couple": 0.625,
+      "Previously Married": 0.158
+    },
+    {
+      "Cluster_Name": "Regular Family Shoppers",
+      "Single": 0.221,
+      "Couple": 0.654,
+      "Previously Married": 0.126
+    }
+  ],
   "images": [
     "cluster_counts.png",
     "cluster_feature_heatmap.png"
+  ],
+  "html": [
+    "pca_3d.html",
+    "pca_3d_centroids.html"
   ]
 }
