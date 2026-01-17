@@ -1,5 +1,9 @@
 {
   "status": "ready",
   "generated_at": "2026-01-17",
-  "message": "Insights file created successfully"
+  "message": "Insights file created successfully",
+  "images": [
+    "cluster_counts.png",
+    "cluster_feature_heatmap.png"
+  ]
 }
