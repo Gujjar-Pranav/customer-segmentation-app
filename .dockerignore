@@ -5,6 +5,3 @@ __pycache__/
 *.pyd
 .git
 .gitignore
-data/
-*.xlsx
-*.csv
