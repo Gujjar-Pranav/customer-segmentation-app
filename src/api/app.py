@@ -1,24 +1,25 @@
 # src/api/app.py
 from __future__ import annotations
 import io
+import os
+import json
 import pandas as pd
 
 from pathlib import Path
 from typing import Literal
 
-from fastapi import FastAPI, HTTPException, Query,UploadFile, File
+from fastapi import FastAPI, HTTPException, Query,UploadFile, File,Depends
 
 from src.api.schemas import PredictRawRequest, PredictEngineeredRequest, PredictResponse
 
 from src.api.service import predict, predict_batch, get_bundle, model_info
-from fastapi.responses import StreamingResponse,JSONResponse
+from fastapi.responses import StreamingResponse,JSONResponse,FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.requests import Request
-
-from fastapi import Depends,FastAPI
+from fastapi.staticfiles import StaticFiles
 from src.api.auth import require_api_key
 
-import os
+
 ARTIFACTS_DIR = os.getenv("ARTIFACTS_DIR", "outputs/latest")
 
 
@@ -29,6 +30,14 @@ app = FastAPI(
     version="1.0.0",
     description="FastAPI backend for customer segmentation using saved KMeans model artifacts",
 )
+
+# Paths
+LATEST_DIR = Path("outputs/latest")
+INSIGHTS_JSON = Path("outputs/insights.json")
+
+# Serve PNGs from outputs/latest at /assets/*
+app.mount("/assets", StaticFiles(directory=str(LATEST_DIR)), name="assets")
+
 
 # --- CORS ---
 # For production: replace "*" with your frontend domain (ex: "http://localhost:3000")
@@ -102,6 +111,18 @@ async def predict_batch_endpoint(
 
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
+
+
+@app.get("/insights")
+def get_insights():
+    if not INSIGHTS_JSON.exists():
+        return {"error": "insights.json not found. Run insights generator first."}
+
+    data = json.loads(INSIGHTS_JSON.read_text(encoding="utf-8"))
+
+    # Convert image filenames into URLs the frontend can load
+    data["image_urls"] = [f"/assets/{name}" for name in data.get("images", [])]
+    return data
 
 @app.get("/model-info")
 def model_info_endpoint():
