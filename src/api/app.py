@@ -114,16 +114,18 @@ async def predict_batch_endpoint(
 
 
 @app.get("/insights")
-def get_insights():
+def get_insights(request: Request):
     if not INSIGHTS_JSON.exists():
         return {"error": "insights.json not found. Run insights generator first."}
 
     data = json.loads(INSIGHTS_JSON.read_text(encoding="utf-8"))
 
-    # Convert image filenames into URLs the frontend can load
-    data["image_urls"] = [f"/assets/{name}" for name in data.get("images", [])]
-    return data
+    base = str(request.base_url).rstrip("/")  # e.g. https://customer-segmentation-app-gi1g.onrender.com
 
+    data["image_urls"] = [f"{base}/assets/{name}" for name in data.get("images", [])]
+    data["html_urls"]  = [f"{base}/assets/{name}" for name in data.get("html", [])]
+
+    return data
 @app.get("/model-info")
 def model_info_endpoint():
     return model_info(ARTIFACTS_DIR)
