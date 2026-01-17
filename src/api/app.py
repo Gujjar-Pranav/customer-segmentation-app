@@ -32,7 +32,7 @@ app = FastAPI(
 )
 
 # Paths
-LATEST_DIR = Path("outputs/latest")
+LATEST_DIR = Path(__file__).resolve().parents[2] / "outputs" / "latest"
 INSIGHTS_JSON = Path("outputs/latest/insights.json")
 
 # Serve PNGs from outputs/latest at /assets/*
