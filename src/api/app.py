@@ -54,6 +54,14 @@ def warmup_model_cache():
     # Load artifacts once at startup
     get_bundle(str(ARTIFACTS_DIR))
 
+@app.get("/debug-assets")
+def debug_assets():
+    return {
+        "latest_dir": str(LATEST_DIR),
+        "exists": LATEST_DIR.exists(),
+        "files": sorted([p.name for p in LATEST_DIR.glob("*")])[:200],
+    }
+
 @app.get("/")
 def root():
     return {"message": "Customer Segmentation API is running ✅"}
